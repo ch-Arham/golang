@@ -20,6 +20,16 @@ type avatar struct {
 	image    string
 }
 
+type rectangle struct {
+	width  uint
+	height uint
+}
+
+// Method on struct
+func (r rectangle) area() uint {
+	return r.width * r.height
+}
+
 func main() {
 	newUser := User{
 		name:  "Arham",
@@ -42,6 +52,10 @@ func main() {
 		height: 10,
 		color:  "white",
 	}
+
+	rect := rectangle{width: 10, height: 5}
+
+	fmt.Println("Area:", rect.area())
 
 	fmt.Println("newUser:", newUser.comment.likes)
 	fmt.Println("newUser:", newUser.platform)
